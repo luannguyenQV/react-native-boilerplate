@@ -4,10 +4,11 @@
  */
 
 import React, { Component } from 'react'
-import { Text } from 'react-native'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+
 import { store, persistor } from './src/store'
+import Router from './src/route'
 
 type Props = {}
 
@@ -16,7 +17,7 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Text style={{}}>Welcome to React Native!</Text>
+          <Router />
         </PersistGate>
       </Provider>
     )
